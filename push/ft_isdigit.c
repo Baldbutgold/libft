@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-hadj <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 13:49:51 by ael-hadj          #+#    #+#             */
-/*   Updated: 2024/10/22 17:17:58 by ael-hadj         ###   ########.fr       */
+/*   Created: 2024/10/21 18:49:24 by ael-hadj          #+#    #+#             */
+/*   Updated: 2024/10/22 18:58:59 by ael-hadj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
-{
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
-}
+#include "libft.h"
 
-/*int	main()
+int	ft_isdigit(int c)
 {
-	printf("%c", ft_toupper('a'));
-	printf("%c", ft_toupper('z'));
-	printf("%c", ft_toupper('A'));
-	printf("%c", ft_toupper('Z'));
-	printf("%c", ft_toupper('1'));
-	printf("%c", ft_toupper('0'));
-}*/
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
+}

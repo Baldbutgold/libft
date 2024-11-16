@@ -29,7 +29,7 @@ static int	calc_digit(int n)
 	return (tracker);
 }
 
-char	*ft_handle_negative(int n, int i, char *num)
+static char	*ft_handle_negative(int n, int i, char *num)
 {
 	if (n < 0)
 	{
