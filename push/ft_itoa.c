@@ -1,89 +1,62 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ael-hadj <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 14:22:24 by ael-hadj          #+#    #+#             */
-/*   Updated: 2024/10/26 14:22:24 by ael-hadj         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
-static int	calc_digit(int n)
+static int	calc_string_len(int n)
 {
-	int	tracker;
+	int	len;
 
-	tracker = 0;
-	if (n == 0)
-	{
-		return (1);
-	}
-	while (n != 0)
-	{
-		n = n / 10;
-		tracker++;
-	}
-	return (tracker);
-}
-
-static char	*ft_handle_negative(int n, int i, char *num)
-{
+	len = 0;
 	if (n < 0)
 	{
-		n = n * (-1);
-		num[0] = '-';
-		num[i + 1] = '\0';
-		while (i >= 1)
-		{
-			num[i--] = (n % 10) + 48;
-			n = n / 10;
-		}
+		len++;
+		n *= -1;
 	}
-	return (num);
+	if (n == 0)
+		return (1);
+	while (n)
+	{
+		n = n / 10;
+		len++;
+	}
+	return (len);
 }
 
-char	*ft_handle_positive(int n, int i, char *num)
+static char	*ft_handle_num(int n, char *num, int len)
 {
-	num[i] = '\0';
-	while (i >= 0)
+	int	is_negative;
+	int	str_index;
+
+	str_index = len - 1;
+	is_negative = 0;
+	if (n < 0)
 	{
-		num[--i] = (n % 10) + 48;
+		n *= -1;
+		is_negative = 1;
+	}
+	while (n)
+	{
+		num[str_index--] = (n % 10) + '0';
 		n = n / 10;
 	}
+	if (is_negative == 1)
+		num[0] = '-';
 	return (num);
 }
 
 char	*ft_itoa(int n)
 {
-	int		i;
-	char	*num;
-
-	i = calc_digit(n);
-	if (n == -2147483648)
-	{
+	int		len;
+	char	*int_str;
+	
+	if (n == INT_MIN)
 		return (ft_strdup("-2147483648"));
-	}
-	else if (n < 0)
-	{
-		num = malloc(i + 2);
-		if (!num)
-			return (0);
-		ft_handle_negative(n, i, num);
-	}
+	len = calc_string_len(n);
+	int_str = (char *)malloc((len + 1) * sizeof(char));
+	if (!int_str)
+		return (NULL);
+	if (n == 0)
+		int_str[0] = '0';
 	else
-	{
-		num = malloc(i + 1);
-		if (!num)
-			return (0);
-		ft_handle_positive(n, i, num);
-	}
-	return (num);
+		ft_handle_num(n, int_str, len);
+	int_str[len] = '\0';
+	return (int_str);
 }
-
-/*int	main()*/
-/*{*/
-/*	printf("%s", ft_itoa(-2147483648));*/
-/*}*/

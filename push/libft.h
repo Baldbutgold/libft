@@ -47,6 +47,12 @@ void	*ft_memset(void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 /* --------------------- */
 /* --------------------- */
+/* ---------------------------- */
+/* functions calling functions 2/2 */
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+/* --------------------- */
+/* --------------------- */
 /* --------------------- */
 /* atoi && itoa  2 */
 int		ft_atoi(const char *nptr);
@@ -73,12 +79,6 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strtrim(char const *str, char const *set);
 char	*ft_substr(char const *str, unsigned int start, size_t len);
-/* --------------------- */
-/* --------------------- */
-/* ---------------------------- */
-/* functions calling functions 2/2 */
-void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 /* --------------------- */
 /* --------------------- */
 /* ---------------------------- */

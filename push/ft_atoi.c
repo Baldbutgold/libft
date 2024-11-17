@@ -38,7 +38,7 @@ int	ft_atoi(const char *nptr)
 	}
 	while (ft_isdigit(nptr[i]))
 	{
-		num = (num * 10) + (nptr[i] - 48);
+		num = (num * 10) + (nptr[i] - '0');
 		i++;
 	}
 	return (num * sign);
