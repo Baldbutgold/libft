@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-hadj <ael-hadj@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 15:15:24 by ael-hadj          #+#    #+#             */
-/*   Updated: 2024/11/11 15:16:50 by ael-hadj         ###   ########.fr       */
+/*   Created: 2024/11/14 20:40:45 by ael-hadj          #+#    #+#             */
+/*   Updated: 2024/11/14 20:43:53 by ael-hadj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t				i;
-	const unsigned char	*p1;
-	const unsigned char	*p2;
+	unsigned int	i;
+	char			*s_cpy;
 
+	s_cpy = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (!s_cpy)
+		return (NULL);
 	i = 0;
-	p1 = s1;
-	p2 = s2;
-	while (n > 0)
+	while (s[i])
 	{
-		if (p1[i] != p2[i])
-			return (p1[i] - p2[i]);
-		n--;
+		s_cpy[i] = f(i, s[i]);
 		i++;
 	}
-	return (0);
+	s_cpy[i] = 0;
+	return (s_cpy);
 }

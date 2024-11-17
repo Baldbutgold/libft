@@ -43,33 +43,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (num * sign);
 }
-int main() {
-    // Test cases
-    char* inputs[] = {
-        "123",       "-123",       "   42",    "42abc",   "abc123", 
-        "2147483648", "-2147483649", "",        "   ",     "000123"
-    };
-    
-    int cted_values[] = {
-        123,         -123,         42,         42,         0,
-        INT_MAX,     INT_MIN,      0,          0,          123
-    };
-
-    for (int i = 0; i < 10; i++) {
-        char* input = inputs[i];
-        
-        // Run the custom ft_atoi function
-        int result_ft_atoi = ft_atoi(input);
-
-        // Run the built-in atoi function
-        int result_builtin_atoi = atoi(input);
-        
-        // Print results for comparison
-        printf("Input: '%s'\n", input);
-        printf("ft_atoi Result: %d\n", result_ft_atoi);
-        printf("atoi Result:    %d\n", result_builtin_atoi);
-        printf("Match: %s\n\n", result_ft_atoi == result_builtin_atoi ? "Yes" : "No");
-    }
-
-    return 0;
-}

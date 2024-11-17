@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-hadj <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ael-hadj <ael-hadj@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 21:26:26 by ael-hadj          #+#    #+#             */
-/*   Updated: 2024/10/23 14:31:49 by ael-hadj         ###   ########.fr       */
+/*   Created: 2024/11/10 21:21:12 by ael-hadj          #+#    #+#             */
+/*   Updated: 2024/11/10 21:21:12 by ael-hadj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	ft_memset(s, 0, n);
+	if (dest >= src)
+	{
+		while (n--)
+			((unsigned char *)dest)[n] = ((unsigned char *)src)[n];
+	}
+	else
+		ft_memcpy(dest, src, n);
+	return (dest);
 }
-
-/*int	main()
-{
-	char s[80] = "This   test"; 
-
-	ft_bzero(s + 4, 3);
-	printf("%s\n", s);
-	printf("%s", s + 7);
-}*/
