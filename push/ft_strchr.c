@@ -13,12 +13,10 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	size_t	i;
 
-	if (c == '\0')
-		return ((char *)s + ft_strlen(s));
 	i = 0;
-	while (s[i])
+	while (i <= ft_strlen(s))
 	{
 		if (s[i] == c)
 			return ((char *)s + i);

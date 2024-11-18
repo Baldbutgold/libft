@@ -9,28 +9,29 @@
 /*   Updated: 2024/10/28 17:13:16 by ael-hadj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
 	size_t	i;
 
-	if (c == '\0')
-		return ((char *)s + ft_strlen(s));
 	i = ft_strlen(s);
+	if (c == '\0')
+		return ((char *) s + i);
 	while (i > 0)
 	{
-		if (s[--i] == c)
+		i--;
+		if (s[i] == c)
 			return ((char *)s + i);
 	}
 	return (NULL);
 }
 /*#include <string.h>*/
+/*#include <stdio.h>*/
 /*int	main()*/
 /*{*/
-/*	char c;*/
-/*	c = 0;*/
-/*	printf("This is custom : %s\n", ft_strrchr("hello", c));*/
-/*	printf("This is basic : %s\n", strrchr("hello", c));*/
+	/*char c;*/
+	/*c = 'h';*/
+	/*printf("This is custom : %p\n", ft_strrchr("hella", c));*/
+	/*printf("This is basic : %p\n", strrchr("hella", c));*/
 /*}*/
