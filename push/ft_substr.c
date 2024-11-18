@@ -11,25 +11,35 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+#include <string.h>
+/*static int	ft_strndup(char **arr, char const *s, size_t i, size_t len)*/
+/*{*/
+/*	arr[i] = malloc((len + 1) * sizeof(char));*/
+/*	if (!arr[i])*/
+/*		return (0);*/
+/*	ft_memcpy(arr[i], s, len + 1);*/
+/*	arr[i][len] = 0;*/
+/*	return (len);*/
+/*}*/
 char	*ft_substr(char const *str, unsigned int start, size_t len)
 {
 	char	*substr;
 	size_t	i;
 
 	if (start > len || str[0] == '\0')
-		return (0);
+		return (NULL);
 	substr = malloc((len - start + 1) * sizeof(char));
 	if (!substr)
-		return (0);
+		return (NULL);
 	i = 0;
 	while (start < len)
 		substr[i++] = str[start++];
+	substr[i] = 0;
 	return (substr);
 }
-
+/**/
 /*int	main()*/
 /*{*/
 /*	char const str[] = "Hello";*/
-/*	printf("%s", ft_substr(str, 1, 5));*/
+/*	printf("%s", ft_substr(str, 0, 5));*/
 /*}*/

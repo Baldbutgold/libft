@@ -12,6 +12,17 @@
 
 #include "libft.h"
 
+static char	*empty_str(void)
+{
+	char	*str;
+
+	str = malloc(sizeof(char) * 1);
+	if (!str)
+		return (NULL);
+	str[0] = '\0';
+	return (str);
+}
+
 char	*ft_strtrim(char const *str, char const *set)
 {
 	char	*trimmed_str;
@@ -19,14 +30,25 @@ char	*ft_strtrim(char const *str, char const *set)
 	size_t	end;
 
 	start = 0;
-	while (set[start] && ft_strchr(set, str[start]))
+	while (str[start] && ft_strchr(set, str[start]))
 		start++;
 	end = ft_strlen(str) - 1;
-	while (end != 0 && ft_strchr(set, str[end]))
+	while (end && ft_strchr(set, str[end]))
 		end--;
-	trimmed_str = malloc(end - start + 2);
-	if (!trimmed_str)
-		return (0);
-	ft_memcpy(trimmed_str, (void *)str + start, end - start + 1);
+	if (start > end)
+		trimmed_str = empty_str();
+	else
+	{
+		trimmed_str = malloc(end - start + 2);
+		if (!trimmed_str)
+			return (NULL);
+		ft_memcpy(trimmed_str, (void *)str + start, end - start + 1);
+		trimmed_str[end - start + 1] = '\0';
+	}
 	return (trimmed_str);
 }
+/**/
+/*int	main()*/
+/*{*/
+/*	printf("%s\n", ft_strtrim("abchabc", "abc"));*/
+/*}*/
