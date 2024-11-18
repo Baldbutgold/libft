@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ael-hadj <ael-hadj@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/17 11:33:18 by ael-hadj          #+#    #+#             */
+/*   Updated: 2024/11/17 11:33:19 by ael-hadj         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	calc_string_len(int n)
@@ -46,7 +58,7 @@ char	*ft_itoa(int n)
 {
 	int		len;
 	char	*int_str;
-	
+
 	if (n == INT_MIN)
 		return (ft_strdup("-2147483648"));
 	len = calc_string_len(n);

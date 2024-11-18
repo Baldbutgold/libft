@@ -16,9 +16,8 @@ AR			= ar rcs
 
 CFLAGS		= -Wall -Wextra -Werror
 
-.c.o:
-			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
-
+%.o: %.c
+			${CC} ${CFLAGS} -c $< -o $@
 all:		$(NAME)
 
 $(NAME):	${OBJS}
