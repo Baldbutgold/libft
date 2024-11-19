@@ -9,7 +9,6 @@
 /*   Updated: 2024/11/01 11:34:10 by ael-hadj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 static int	ft_countwords(char const *s, char c)
@@ -45,11 +44,18 @@ static int	ft_findlen(char const *s, int c)
 	return (i);
 }
 
+static void	ft_free(char **arr, int i)
+{
+	while (i--)
+		free(arr[i]);
+	free(arr);
+}
+
 static int	ft_strndup(char **arr, char const *s, size_t i, size_t len)
 {
 	arr[i] = malloc((len + 1) * sizeof(char));
 	if (!arr[i])
-		return (0);
+		return (ft_free(arr, i), 0);
 	ft_memcpy(arr[i], s, len + 1);
 	arr[i][len] = 0;
 	return (len);
@@ -65,7 +71,7 @@ char	**ft_split(char const *s, char c)
 	if (s == 0)
 		return (0);
 	words_num = ft_countwords(s, c);
-	arr = (char **)malloc((words_num + 1) * sizeof(char));
+	arr = malloc((words_num + 1) * sizeof(char *));
 	if (!arr)
 		return (NULL);
 	i = 0;
