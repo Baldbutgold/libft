@@ -18,13 +18,13 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (i <= ft_strlen(s))
 	{
-		if (s[i] == c)
+		if ((unsigned char)s[i] == c)
 			return ((char *)s + i);
 		i++;
 	}
 	return (NULL);
 }
-/**/
+
 /*#include <stdio.h>*/
 /*int	main()*/
 /*{*/
