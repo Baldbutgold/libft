@@ -25,13 +25,3 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
-
-/*int main()*/
-/*{*/
-/*    //1337*/
-/*    int	s[80] = {0};*/
-/*	ft_memset(s, 53, 3);*/
-/*	ft_memset(s, 0, 2);*/
-/*	printf("%d", s[0]);*/
-/*    return 0;*/
-/*}*/

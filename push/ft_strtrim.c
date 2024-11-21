@@ -49,8 +49,8 @@ char	*ft_strtrim(char const *str, char const *set)
 	}
 	return (trimmed_str);
 }
-/**/
+
 /*int	main()*/
 /*{*/
-/*	printf("%s\n", ft_strtrim("abchabc", "abc"));*/
+/*	printf("%s\n", ft_strtrim("hhhhh", "hea"));*/
 /*}*/
