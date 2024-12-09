@@ -1,5 +1,5 @@
 # To - Do
-1. Clean Code from any useless comments
+-1. Clean Code from any useless comments-
 2. pull the comments about everything related to libft from my obisdian to here
 3. attach good resources that i have used my self for libft mostly about makefile
 
