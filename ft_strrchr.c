@@ -26,12 +26,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-/*#include <string.h>*/
-/*#include <stdio.h>*/
-/*int	main()*/
-/*{*/
-	/*char c;*/
-	/*c = 'h';*/
-	/*printf("This is custom : %p\n", ft_strrchr("hella", c));*/
-	/*printf("This is basic : %p\n", strrchr("hella", c));*/
-/*}*/

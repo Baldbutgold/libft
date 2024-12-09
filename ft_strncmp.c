@@ -24,16 +24,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		return (0);
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
-
-/*#include <string.h>*/
-/*#include <stdio.h>*/
-/**/
-/*int	main()*/
-/*{*/
-/*	int t;*/
-/*	t = 7;*/
-/*	const char * s = "abc\200 ";*/
-/*	const char * s1 = "abc\0 ";*/
-/*	printf("mine %d\n", ft_strncmp(s, s1, t));*/
-/*	printf("theirs %d", strncmp(s, s1, t));*/
-/*}*/

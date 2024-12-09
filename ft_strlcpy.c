@@ -29,17 +29,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	return (src_len);
 }
-/*#include <bsd/string.h>*/
-/*int	main()*/
-/*{*/
-/*    char src[] = "Hello, World! this is a test to break it";*/
-/*    char dst[20]; // Destination buffer*/
-/*    size_t size = sizeof(dst);*/
-/**/
-/*    size_t custom_return = ft_strlcpy(dst, src, size);*/
-/*	printf("%s\t%ld\n", dst, custom_return);*/
-/*    size_t default_return = strlcpy(dst, src, size);*/
-/*	printf("%s\t%ld\n", dst, default_return);*/
-/**/
-/*    return 0;*/
-/*}*/

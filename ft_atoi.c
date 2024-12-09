@@ -43,11 +43,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (num * sign);
 }
-/*int	main()*/
-/*{*/
-/*	char *s;*/
-/**/
-/*	s = "23";*/
-/*	printf("%d\n",atoi(s));*/
-/*	printf("%d\n",ft_atoi(s));*/
-/*}*/
