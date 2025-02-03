@@ -16,6 +16,19 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+# include <stdarg.h>
+
+/* added functions just for fun */
+
+int	ft_putchar(char c);
+int	ft_putstr(char *s);
+int	ft_putnbr(int n);
+int	ft_putunsigned(unsigned int n);
+int	ft_treat_pointer(unsigned long pointer);
+int	ft_put_pointer(unsigned long pointer);
+int	ft_printf_rest(const char *format, va_list args);
+int	ft_printf(const char *format, ...);
+int	ft_puthex(unsigned int n, int is_upper);
 
 /* ft_is* functions */
 int		ft_isalnum(int c);
