@@ -24,6 +24,7 @@
 # endif
 
 char	*get_next_line(int fd);
+
 /* added functions just for fun */
 
 int		ft_gnl_strchr(char *s, int c);
