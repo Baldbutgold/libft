@@ -17,9 +17,16 @@
 # include <unistd.h>
 # include <limits.h>
 # include <stdarg.h>
+# include <fcntl.h>
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
+char	*get_next_line(int fd);
 /* added functions just for fun */
 
+int	ft_gnl_strchr(char *s, int c);
 int	ft_putchar(char c);
 int	ft_putstr(char *s);
 int	ft_putnbr(int n);
