@@ -26,16 +26,16 @@
 char	*get_next_line(int fd);
 /* added functions just for fun */
 
-int	ft_gnl_strchr(char *s, int c);
-int	ft_putchar(char c);
-int	ft_putstr(char *s);
-int	ft_putnbr(int n);
-int	ft_putunsigned(unsigned int n);
-int	ft_treat_pointer(unsigned long pointer);
-int	ft_put_pointer(unsigned long pointer);
-int	ft_printf_rest(const char *format, va_list args);
-int	ft_printf(const char *format, ...);
-int	ft_puthex(unsigned int n, int is_upper);
+int		ft_gnl_strchr(char *s, int c);
+int		ft_putchar(char c);
+int		ft_putstr(char *s);
+int		ft_putnbr(int n);
+int		ft_putunsigned(unsigned int n);
+int		ft_treat_pointer(unsigned long pointer);
+int		ft_put_pointer(unsigned long pointer);
+int		ft_printf_rest(const char *format, va_list args);
+int		ft_printf(const char *format, ...);
+int		ft_puthex(unsigned int n, int is_upper);
 
 /* ft_is* functions */
 int		ft_isalnum(int c);
@@ -90,5 +90,6 @@ char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlen(const char *s);
 char	**ft_split(char const *s, char c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_strcmp(const char *s1, const char *s2);
 
 #endif

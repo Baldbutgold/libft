@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_pointer.c                                   :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-hadj <ael-hadj@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ael-hadj <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/04 10:36:13 by ael-hadj          #+#    #+#             */
-/*   Updated: 2025/02/04 10:36:13 by ael-hadj         ###   ########.fr       */
+/*   Created: 2024/10/24 13:54:56 by ael-hadj          #+#    #+#             */
+/*   Updated: 2024/10/24 13:54:58 by ael-hadj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_put_pointer(unsigned long pointer)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	int	count;
+	size_t	i;
 
-	if (!pointer)
-		return (ft_putstr("(nil)"));
-	count = 2;
-	ft_putstr("0x");
-	count += ft_treat_pointer(pointer);
-	return (count);
+	i = 0;
+	while ((s1[i] || s2[i]) && s1[i] == s2[i])
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
