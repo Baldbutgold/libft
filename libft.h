@@ -26,6 +26,12 @@
 # define TRUE 1
 # define FALSE 0
 
+typedef struct s_list
+{
+	int				data;
+	struct s_list	*next;
+}					t_list;
+
 char	*get_next_line(int fd);
 
 /* added functions just for fun */
@@ -97,5 +103,11 @@ char	**ft_split(char const *s, char c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_strcmp(const char *s1, const char *s2);
 void	free_grid(char **grid);
+
+/* ----- LINKED LIST UTILITIES ----- */
+t_list				*ft_lstnew(int data);
+int					ft_lstsize(t_list *lst);
+void				ft_lstclear(t_list **lst);
+void				ft_printlst(t_list *head);
 
 #endif
