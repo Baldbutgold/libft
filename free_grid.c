@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_pointer.c                                   :+:      :+:    :+:   */
+/*   free_grid.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-hadj <ael-hadj@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/04 10:36:13 by ael-hadj          #+#    #+#             */
-/*   Updated: 2025/02/04 10:36:13 by ael-hadj         ###   ########.fr       */
+/*   Created: 2025/04/07 10:53:29 by ael-hadj          #+#    #+#             */
+/*   Updated: 2025/04/07 10:53:36 by ael-hadj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_put_pointer(unsigned long pointer)
+void	free_grid(char **grid)
 {
-	int	count;
+	int	i;
 
-	if (!pointer)
-		return (ft_putstr("(nil)"));
-	count = 2;
-	ft_putstr("0x");
-	count += ft_treat_pointer(pointer);
-	return (count);
+	if (!grid)
+		return ;
+	i = 0;
+	while (grid[i])
+		i++;
+	while (i >= 0)
+	{
+		free(grid[i]);
+		i--;
+	}
+	free(grid);
+	return ;
 }
