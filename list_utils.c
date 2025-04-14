@@ -61,7 +61,7 @@ void	ft_printlst(t_list *head)
 	ptr = head;
 	while (ptr)
 	{
-		ft_printf("%d", ptr->rank);
+		ft_printf("%d", ptr->data);
 		ptr = ptr->next;
 	}
 }
